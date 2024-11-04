@@ -6,9 +6,15 @@ export function Main() {
 
   return (
     <>
-    <div className="h-screen">
-      <h1>Hello World!</h1>
-    </div>
+      <div className="h-screen w-full layout grid gap-2">
+        <header className=" header bg-red-400"> Header</header>
+        <aside className=" sidebar bg-blue-500"> Sidebar</aside>
+
+        <main className=" body bg-green-500">
+          {/* Main Content */}
+          APP
+        </main>
+      </div>
     </>
   );
 }

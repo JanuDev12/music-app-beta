@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 #root {
-  max-width: 1280px;
   min-height: 100vh;
-  margin: 0 auto;
-  text-align: center;
 }
 
+.layout {
+  grid:
+    "header header header" auto
+    "sidebar body body" 1fr
+    "sidebar body body" auto
+    / auto 1fr auto;
+}
+
+.sidebar { grid-area: sidebar; }
+.header { grid-area: header;}
+.body { grid-area: body; }

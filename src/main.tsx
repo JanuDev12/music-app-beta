@@ -6,14 +6,18 @@ export function Main() {
 
   return (
     <>
-      <div className="h-screen w-full layout grid gap-2">
-        <header className=" header bg-red-400"> Header</header>
-        <aside className=" sidebar bg-blue-500"> Sidebar</aside>
+      <div className="flex-grow w-full layout grid">
+        <header className=" header p-5 text-white"> Header</header>
+        <aside className="sidebar  w-28 text-white"> Sidebar</aside>
 
-        <main className=" body bg-green-500">
+        <main className=" body bg-green-500   rounded-lg">
           {/* Main Content */}
           APP
         </main>
+      </div>
+      {/* Player */}
+      <div className="fixed z-10  bottom-0 right-0 left-0 bg-red-500 p-3">
+        Player
       </div>
     </>
   );

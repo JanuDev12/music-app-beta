@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 #root {
   min-height: 100vh;
   background-color: #141414;
@@ -14,10 +15,12 @@
   grid:
     "header header header" auto
     "sidebar body body" 1fr
-    "sidebar body body" auto
+    "sidebar body body" 1fr
+    "sidebar player player" auto
     / auto 1fr auto;
 }
 
 .sidebar { grid-area: sidebar; }
 .header { grid-area: header;}
 .body { grid-area: body; }
+.player { grid-area: player;}

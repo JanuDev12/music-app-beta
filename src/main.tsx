@@ -11,8 +11,15 @@ import { Separator } from "./components/ui/separator";
 import IconLibrary from "./components/icons/IconLibrary";
 import IconLibrary2 from "./components/icons/IconLibrary2";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
+import { useEffect } from "react";
+import { tracks } from "./data/tracks";
+import AudioPlayer from "./components/AudioPlayer";
 
 export function Main() {
+
+  const audioSrc = tracks[0].src;
+
+ 
 
   return (
     <>
@@ -100,59 +107,10 @@ export function Main() {
           {/* Main Content */}
           MAIN CONTENT
         </main>
+        
         {/* Player */}
-        <div className="relativd"></div>
-        <div className="player relative bottom-0 right-0 left-0  py-3 px-6 my-1.5 mx-2  rounded-lg flex items-center text-white justify-between">
-          {/* Players Button  */}
-
-          {/* BLUR */}
-          {/*  <div className="absolute inset-0 backdrop-blur z-auto">
-            
-           </div> */}
-          <div className="flex items-center gap-3">
-            <Button variant="secondary" size="icon" className="rounded-[50%]">
-              <IconPlayerPlayFilled />
-            </Button>
-            <div className="flex gap-3">
-              <IconPlayerSkipForwardFilled />
-              <IconPlayerSkipBackFilled />
-              <Shuffle />
-              <Repeat />
-            </div>
-
-            {/* Slider */}
-            <div className="w-80 flex items-center gap-3 text-xs">
-              <span>1:32</span>
-              <Slider defaultValue={[33]} max={100} step={1} />
-              <span>4:52</span>
-              <div>
-                <Volume1 />
-              </div>
-            </div>
-
-            {/* Card artist */}
-            <div className="flex gap-3">
-              <div className="size-9 bg-slate-400 rounded"></div>
-              <div className="flex flex-col text-xs">
-                <span className="text-sm">Song name</span>
-                <span>Artist name</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Buttons Songs */}
-          <div className="flex items-center gap-5">
-            <IconHeart />
-            <IconPlaylists />
-            <IconQueue />
-            <MonitorSpeakerIcon />
-            <EllipsisIcon />
-
-            <Separator orientation="vertical" color="gray" className="h-10" />
-
-            <MicVocalIcon />
-          </div>
-        </div>
+        <AudioPlayer tracks={tracks}/>
+       
       </div>
     </>
   );
